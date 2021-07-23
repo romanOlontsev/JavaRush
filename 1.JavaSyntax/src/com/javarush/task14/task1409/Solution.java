@@ -1,26 +1,20 @@
 package com.javarush.task14.task1409;
 
-import java.io.FileNotFoundException;
-import java.io.SyncFailedException;
-import java.nio.file.FileSystemException;
-
 /*
-Оборачивание исключений
+Пропускаем сквозь себя
 */
 
 public class Solution {
 
-    public static void main(String[] args) {
-        copyFile("book.txt", "book_final_copy.txt");
-        copyFile("book_final_copy.txt", "book_last_copy.txt");
+    public static void main(String[] args) throws Exception{
+        generateLuckyNumber();
     }
 
-    static void copyFile(String sourceFile, String destinationFile) {
-        try {
-            FileUtils.readFile(sourceFile);
-            FileUtils.writeFile(destinationFile);
-        } catch (FileNotFoundException | FileSystemException e) {
-            throw new RuntimeException();
+    static void generateLuckyNumber() throws Exception {
+        int luckyNumber = (int) (Math.random() * 100);
+        if (luckyNumber == 13) {
+            throw new Exception("не повезло");
         }
+        System.out.println("твое счастливое число: " + luckyNumber);
     }
 }

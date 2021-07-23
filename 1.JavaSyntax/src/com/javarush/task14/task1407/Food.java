@@ -1,4 +1,4 @@
-package com.javarush.task14.task1406;
+package com.javarush.task14.task1407;
 
 public class Food {
 
