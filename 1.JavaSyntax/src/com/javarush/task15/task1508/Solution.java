@@ -16,8 +16,7 @@ public class Solution {
              InputStreamReader reader = new InputStreamReader(stream);
              BufferedReader buff = new BufferedReader(reader)) {
 
-            Scanner console = new Scanner(buff);
-            String line = console.nextLine();
+            String line = buff.readLine();
             char[] chars = line.toCharArray();
             for (int i = 0; i < chars.length; i++) {
                 if (i % 2 == 1) {
